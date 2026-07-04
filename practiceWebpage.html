@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPCART</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            display: flex;
+            background: linear-gradient(rgba(209, 117, 18, 0.854),rgba(193, 156, 21, 0.907));
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            padding: 20px 40px;
+        }
+        body{
+            background-color: #fff8e1;
+        }
+        .logo{
+            margin-left: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Arial Narrow Bold'; 
+            color: white;
+        }
+        .search-bar{
+            display: flex;
+        }
+        .search-bar input{
+            padding: 5px;
+            border-radius: 6px 0 0 6px;
+            border-right: none; 
+            border-top-left-radius: 20px;
+            background-color: white;
+            
+            
+        }
+        .search-bar button{
+            padding: 5px;
+            border-radius: 0 6px 6px 0;
+            border-bottom-right-radius: 20px;
+            margin-left:0;
+            background-color: orange;
+            border-left: none;
+            transform: 0.7s;
+        }
+        .search-bar button:hover{
+            scale: 1.1;
+        }
+        ul{
+            display: flex;
+           margin-right: 70px;
+            gap: 30px;
+        }
+        li{
+            list-style: none;
+            font-weight: bold;
+            
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        button{
+            cursor: pointer;
+        }
+        .main{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 500px;
+            background:linear-gradient(rgba(0, 0, 0, .5), rgba(21 ,22, 21, 0.5)), url(https://tse1.mm.bing.net/th/id/OIP.VIaDZHLykgX_fAcRzLrQwwHaE7?pid=Api&P=0&h=180 );
+
+        }
+        .main-text{
+            color: white;
+            text-align: center;
+            
+        }
+        .main-text h1{
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            
+        }
+        .main-text p{
+            padding: 7px;
+            margin: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #FFFFFF;
+            
+        }
+        .main-text button{
+            padding:10px;
+            border-radius: 50px;
+            background-color: orange;
+            transition: 0.4s;
+        }
+        .main-text button:hover{
+            scale: 1.1;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(180px, 1fr));
+            justify-content: space-around;
+            margin: 10px;
+            gap: 30px;
+           
+        }
+        .cards{
+             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             padding: 40px;
+             border-radius: 30px;
+             text-align: center;
+             margin: 10px;
+             font-weight: bold;
+             font-size: 20px;
+             background-color:rgb(236, 190, 140);
+             transition: 0.6s;
+             color: #000000;
+             
+
+        }
+        .cards:hover{
+            scale: 1.1;
+        }
+        
+       .items{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+        gap: 60px;
+        padding: 50px;
+        
+
+       }
+       .items-cards{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-color: white; 
+        border-radius: 30px;
+        transition: 0.4s;
+        height: 99%;
+        padding: 3px;
+        
+       }
+       .items-cards:Hover{
+        transform: translateY(-15px);
+       }
+       .items-cards img{
+        height: 250px;
+        border-radius : 30px;
+        width: 100%;
+
+        
+       }
+       .items-cards h3{
+        margin: 10px;
+        line-height: 30px ;
+        font-size: 26px ;
+        
+       } 
+       .items-cards h4{
+        font-size: 21px;
+        margin: 5px;
+        padding-left: 8px;
+
+       }
+       .items-cards h5{
+        margin-top: -5px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+       }
+       .items-cards button{
+        margin: 10px;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 30px;
+        background-color: orange;
+        
+        color: white;
+        transform: 0.4s;
+
+       }
+       .items-cards button:Hover{
+        scale: 1.1;
+       }
+       .footer{
+        padding: 20px;
+        text-align: center;
+        background:linear-gradient(rgba(209, 117, 18, 0.854),rgba(193, 156, 21, 0.907)) ;
+        color: white;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">SHOPCART</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search your item">
+            <button>Search</button> 
+        </div>
+        <ul>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Order</a></li>
+            <li><a href="">Cart</a></li>
+            <li><a href="">Help</a></li>
+        </ul>
+    </div>
+  <div class="main">
+        <div class="main-text">
+            <h1>Biggest Summer Sale</h1>
+            <p>Up To 70% Discount On Electronics </p>
+            <button>Check Out</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cards">Mobile</div>
+        <div class="cards">Shoes</div>
+        <div class="cards">Clouthes</div>
+        <div class="cards">Deals</div>
+    </div>
+<div class="items">
+    <div class="items-cards">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2022/9/ZE/YH/DF/12982737/men-puma-casual-shoes-1000x1000.jpeg" alt="">
+    <h3>PUMA <br> <h5>Mens X-ray Astralis Sneaker</h5></h3>
+    <h4>Rs2,999</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://media.krefel.be/sys-master/products/9464102322206/3840x3840.51007024_01.webp" alt="">
+    <h3>Galaxy S25 Ultra<br> <h5>With AI Power</h5> </h3>
+    <h4>Rs1,49,999</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=wood-wristwatch-time-190819.jpg&fm=jpg" alt="">
+    <h3>AMERICANVIBER <br><h5>Men's Wrist Watch</h5></h3>
+    <h4>Rs1,999</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://safaribags.com/cdn/shop/files/1_f608023b-4727-43ea-a2b6-cf6bf90eb59a_1000x.jpg?v=1710824618" alt="">
+    <h3>Safari<br> <h5>Compact Office Laptop Bag</h5>  </h3>
+    <h4>Rs1,639</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://img.freepik.com/premium-photo/air-conditioner-hd-8k-wallpaper-stock-photographic-image_915071-27095.jpg?w=2000" alt="">
+    <h3>Haier<br><h5>1.5 Ton 5 Star AC</h5></h3>
+    <h4>Rs24,999</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://zebronics.com/cdn/shop/files/Zeb_combat-pic4.jpg?v=1723036288&width=1200" alt="">
+    <h3>Zebronics<br><h5>Wired Keyboard & Mouse</h5> </h3>
+    <h4>Rs1,569</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://cdn1.smartprix.com/rx-iZgUQ66R0-w1200-h1200/ZgUQ66R0.jpg" alt="">
+    <h3>boAt<br><h5>Boat Airdopes Ultra Plus</h5>  </h3>
+    <h4>Rs1,099</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://m.media-amazon.com/images/I/81tmCrtiRgL._AC_.jpg" alt="">
+    <h3>Lenovo<br><h5>LOQ 12th Gen Core i5 12450HX</h5>  </h3>
+    <h4>Rs76,990</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://m.media-amazon.com/images/I/81FwAC6U3IL._AC_SL1500_.jpg" alt="">
+    <h3>Kadence<br><h5>EGSUN-SC Electric Guitar</h5></h3>
+    <h4>Rs12,499</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://www.lg.com/ph/images/tvs/md07571492/gallery/OLED55A3PSA-OLED-TV-DZ-01.jpg" alt="">
+    <h3>LG<br><h5>65 Inches OLED AI 4k Ultra HD</h5></h3>
+    <h4>Rs1,89,990</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://tiimg.tistatic.com/fp/1/009/318/-skybags-stroke-cabin-abs-hardshell-luggage-55-cm-printed-luggage-4-wheel-inline-trolley-bag-with-8-wheels-and-in-built-combination-lock-unisex-blue--798.jpg" alt="">
+    <h3>Skybags<br><h5>Cabin Stroke Trolley bag</h5></h3>
+    <h4>Rs1,799</h4>
+    <button>Buy</button>
+</div>
+<div class="items-cards">
+    <img src="https://assets.products-live.ao.com/Images/6693f52d-76b4-4e74-ade6-201610f105b2/1280x1280/NM111064WCAUKN_WH_hotpoint_washingmachine_06.jpg" alt="">
+    <h3>Whirlpool<br><h5>7kg 5 Star Washing Machine</h5></h3>
+    <h4>Rs25,790</h4>
+    <button>Buy</button>
+</div>
+</div>
+<div class="footer">
+<div class="text">
+    <h1>SHOPCART</h1>
+    <h4>This is advanced CSS Website</h4>
+</div>
+</div>
+</body>
+</html>
